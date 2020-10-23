@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class CodeInputViewController: UIViewController, UITextFieldDelegate {
 
@@ -26,21 +27,39 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         
         addKeyboardNotification()
     }
-    @IBAction func NextBtn1(_ sender: Any) {
+    @IBAction func NextBtn(_ sender: Any) {
         if CodeTextField.text == ""{
             alert("코드를 확인해주세요!")
         }
         else {
-            guard let vc = storyboard?.instantiateViewController(identifier: "SignupVC2") as? IdInputViewController else {
-                return
+            let parameters: [String: String] = [
+                "code": CodeTextField.text!
+            ]
+            
+            let alamo = AF.request(baseURL+"/checkCODE", method: .post, parameters:parameters, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300)
+            
+            alamo.responseJSON(){ response in
+                switch response.result
+                {
+                    case .success(let value):
+                        let valueNew = value as? [String:Any]
+                        print(valueNew?["message"]as! String)
+                        
+                        guard let vc = self.storyboard?.instantiateViewController(identifier: "SignupVC2") as? IdInputViewController else {
+                            return
+                        }
+                        vc.code = self.CodeTextField.text!
+                        vc.modalTransitionStyle = .crossDissolve
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: true)
+                        
+                    case .failure( _):
+                        self.alert("없는 코드입니다.")
+                }
             }
-            vc.code = CodeTextField.text!
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true)
         }
     }
-    @IBAction func BackBtn1(_ sender: Any) {
+    @IBAction func BackBtn(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true)
     }
     

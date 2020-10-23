@@ -51,7 +51,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             case .success(let value):
                                 
                                 let valueNew = value as? [String:Any]
-                                print(valueNew?["admin"] as? String)
                                 if (valueNew?["admin"] as? String) == nil{
                                     token = valueNew?["authorization"] as! String
                                     

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class IdInputViewController: UIViewController, UITextFieldDelegate {
     
@@ -34,14 +35,33 @@ class IdInputViewController: UIViewController, UITextFieldDelegate {
             alert("아이디를 확인해주세요!")
         }
         else {
-            guard let vc = storyboard?.instantiateViewController(identifier: "SignupVC3") as? PwdInputViewController else {
-                return
+            
+            let parameters: [String: String] = [
+                "id": IdTextField.text!
+            ]
+            
+            let alamo = AF.request(baseURL+"/checkID", method: .post, parameters:parameters, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300)
+            
+            alamo.responseJSON(){ response in
+                switch response.result
+                {
+                    case .success(let value):
+                        let valueNew = value as? [String:Any]
+                        print(valueNew?["message"]as! String)
+                        
+                        guard let vc = self.storyboard?.instantiateViewController(identifier: "SignupVC3") as? PwdInputViewController else {
+                            return
+                        }
+                        vc.code = self.code
+                        vc.id = self.IdTextField.text!
+                        vc.modalTransitionStyle = .crossDissolve
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: true)
+                        
+                    case .failure( _):
+                        self.alert("이미 있는 아이디입니다.")
+                }
             }
-            vc.code = code
-            vc.id = IdTextField.text!
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true)
         }
     }
     @IBAction func BackBtn(_ sender: Any) {

@@ -67,7 +67,7 @@ class PhoneNumberInputViewController: UIViewController, UITextFieldDelegate {
                         self.present(vcName, animated: true, completion: nil)
                         
                     case .failure( _):
-                        self.alert("없는 코드입니다.")
+                        self.alert("ERROR")
                 }
             }
         }

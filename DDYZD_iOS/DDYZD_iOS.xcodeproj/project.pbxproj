@@ -14,6 +14,7 @@
 		921136F025308721006E8141 /* PhoneNumberInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921136EF25308721006E8141 /* PhoneNumberInputViewController.swift */; };
 		921136F3253092F4006E8141 /* EndofSingupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921136F2253092F4006E8141 /* EndofSingupViewController.swift */; };
 		923915712532876500FE5A86 /* LaunchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923915702532876500FE5A86 /* LaunchingViewController.swift */; };
+		92F4C666254024F7003DAE19 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4C665254024F7003DAE19 /* MenuViewController.swift */; };
 		92F8DE4D252DAE86004FD96F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8DE4C252DAE86004FD96F /* AppDelegate.swift */; };
 		92F8DE4F252DAE86004FD96F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8DE4E252DAE86004FD96F /* SceneDelegate.swift */; };
 		92F8DE54252DAE86004FD96F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F8DE52252DAE86004FD96F /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		921136EF25308721006E8141 /* PhoneNumberInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberInputViewController.swift; sourceTree = "<group>"; };
 		921136F2253092F4006E8141 /* EndofSingupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndofSingupViewController.swift; sourceTree = "<group>"; };
 		923915702532876500FE5A86 /* LaunchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchingViewController.swift; sourceTree = "<group>"; };
+		92F4C665254024F7003DAE19 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		92F8DE49252DAE86004FD96F /* DDYZD_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDYZD_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F8DE4C252DAE86004FD96F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92F8DE4E252DAE86004FD96F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				921136DE253070A6006E8141 /* Signup */,
 				92F8DE6A252DB1BD004FD96F /* MainViewController.swift */,
 				92F8DE8725301FF6004FD96F /* CircleInfoViewController.swift */,
+				92F4C665254024F7003DAE19 /* MenuViewController.swift */,
 				92F8DE6D252E01D0004FD96F /* RoundUIView.swift */,
 			);
 			path = Views;
@@ -283,6 +286,7 @@
 				921136F025308721006E8141 /* PhoneNumberInputViewController.swift in Sources */,
 				921136E425307276006E8141 /* IdInputViewController.swift in Sources */,
 				92F8DE8825301FF6004FD96F /* CircleInfoViewController.swift in Sources */,
+				92F4C666254024F7003DAE19 /* MenuViewController.swift in Sources */,
 				92F8DE4D252DAE86004FD96F /* AppDelegate.swift in Sources */,
 				923915712532876500FE5A86 /* LaunchingViewController.swift in Sources */,
 				92F8DE71252E9968004FD96F /* LoginViewController.swift in Sources */,
