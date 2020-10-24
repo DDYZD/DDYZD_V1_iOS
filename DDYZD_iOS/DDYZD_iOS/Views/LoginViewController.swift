@@ -25,8 +25,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         PwdTextField.layer.borderWidth = 1.0
         PwdTextField.layer.borderColor = #colorLiteral(red: 0.495298028, green: 0.5103443861, blue: 0.8756814003, alpha: 1)
         PwdTextField.delegate = self
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func loginBtn(_ sender: Any) {
@@ -42,23 +40,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 "password": PwdTextField.text!
             ]
                     
-                    let alamo = AF.request(baseURL+"/login", method: .post, parameters:parameters, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300)
+            let alamo = AF.request(baseURL+"/login", method: .post, parameters:parameters, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300)
                     
-                    alamo.responseJSON(){ response in
-                        switch response.result
-                        {
-                            //통신성공
-                            case .success(let value):
-                                
-                                let valueNew = value as? [String:Any]
-                                if (valueNew?["admin"] as? String) == nil{
-                                    token = valueNew?["authorization"] as! String
+            alamo.responseJSON(){ response in
+                switch response.result
+                {
+                    //통신성공
+                    case .success(let value):
+                        
+                        let valueNew = value as? [String:Any]
+                        if (valueNew?["admin"] as? String) == nil{
+                            token = valueNew?["authorization"] as! String
+                            
+                            UserDefaults.standard.set(self.IdTextField.text, forKey: "id")
+                            UserDefaults.standard.set(self.PwdTextField.text, forKey: "pwd")
                                     
-                                    UserDefaults.standard.set(self.IdTextField.text, forKey: "id")
-                                    UserDefaults.standard.set(self.PwdTextField.text, forKey: "pwd")
-                                    
-                                    guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainNC") else {
-                                        return
+                            guard let vcName = self.storyboard?.instantiateViewController(withIdentifier: "mainNC") else {
+                                    return
                                     }
                                     vcName.modalTransitionStyle = .coverVertical
                                     vcName.modalPresentationStyle = .fullScreen

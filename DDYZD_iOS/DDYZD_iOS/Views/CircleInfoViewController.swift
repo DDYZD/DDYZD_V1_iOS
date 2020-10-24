@@ -6,15 +6,19 @@
 //
 
 import UIKit
+import Alamofire
 import MarkdownView
+import SafariServices
 
-class CircleInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CircleInfoViewController: UIViewController{
 
     public var circleName : String = ""
+    public var circleLogoData : Data? = nil
     
+    @IBOutlet weak var circleBackgroundImage: UIImageView!
     @IBOutlet weak var circleLogo: UIImageView!
     @IBOutlet weak var circleNameLable: UILabel!
-    @IBOutlet weak var infoTable: UITableView!
+    @IBOutlet weak var MdView: MarkdownView!
     
     
     
@@ -24,12 +28,54 @@ class CircleInfoViewController: UIViewController, UITableViewDelegate, UITableVi
         setNavigationBar()
         circleLogo.layer.cornerRadius = circleLogo.frame.size.width/2.0
         
+        MdView.isScrollEnabled = false
+        setMdView()
         circleNameLable.text = circleName
-        
-        infoTable.delegate = self
-        infoTable.dataSource = self
-        infoTable.allowsSelection = false
+        circleLogo.image = UIImage(data: circleLogoData!)
+        getData()
     }
+    
+    func getData(){
+        AF.request( baseURL+"/circles/info?"+now(), method: .get,parameters: [:] ,headers: ["circleName": circleName]).validate().responseJSON(completionHandler: { res in
+                    
+                    switch res.result {
+                        case .success(let value):
+                            print(value)
+                            let valueNew = value as? [String:Any]
+                            
+                            
+                        case .failure(let err):
+                            print("ERROR : \(err)")
+                        }
+                })
+    }
+    
+    func setMdView(){
+        MdView.onTouchLink = { [weak self] request in
+          guard let url = request.url else { return false }
+
+          if url.scheme == "file" {
+            return true
+          } else if url.scheme == "https" {
+            let safari = SFSafariViewController(url: url)
+            self?.present(safari, animated: true, completion: nil)
+            return false
+          } else {
+            return false
+          }
+        }
+
+        let session = URLSession(configuration: .default)
+        let url = URL(string: baseURL+"/md/blueberry.md")!
+        let task = session.dataTask(with: url) { [weak self] data, _, _ in
+          let str = String(data: data!, encoding: String.Encoding.utf8)
+          DispatchQueue.main.async {
+            self?.MdView.load(markdown: str)
+          }
+        }
+        task.resume()
+    }
+    
     
     @IBAction func goMenu(_ sender: Any) {
         performSegue(withIdentifier: "goMenuVC", sender: nil)
@@ -46,30 +92,11 @@ class CircleInfoViewController: UIViewController, UITableViewDelegate, UITableVi
         self.navigationController?.navigationBar.topItem?.title = ""
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    func now() -> String{
+        let formatter_time = DateFormatter()
+        formatter_time.dateFormat = "ss"
+        let current_time_string = formatter_time.string(from: Date())
+        return current_time_string
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell  = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mdViewer
-        
-        let session = URLSession(configuration: .default)
-        let url = URL(string: "https://raw.githubusercontent.com/matteocrippa/awesome-swift/master/README.md")!
-        let task = session.dataTask(with: url) { [weak cell] data, _, _ in
-          let str = String(data: data!, encoding: String.Encoding.utf8)
-          DispatchQueue.main.async {
-            
-          }
-        }
-        task.resume()
 
-        return cell
-    }
-}
-     
-
-
-class mdViewer: UITableViewCell {
-    @IBOutlet weak var mdView: MarkdownView!
-    
 }

@@ -187,6 +187,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             if let destinationVC = segue.destination as? CircleInfoViewController,
                let indexpathRow = sender as? Int{
                 destinationVC.circleName = viewingCircles[indexpathRow].name
+                destinationVC.circleLogoData = viewingCircles[indexpathRow].logo
             }
         }
     }

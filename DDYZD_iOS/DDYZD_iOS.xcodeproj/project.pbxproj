@@ -14,6 +14,7 @@
 		921136F025308721006E8141 /* PhoneNumberInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921136EF25308721006E8141 /* PhoneNumberInputViewController.swift */; };
 		921136F3253092F4006E8141 /* EndofSingupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921136F2253092F4006E8141 /* EndofSingupViewController.swift */; };
 		923915712532876500FE5A86 /* LaunchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923915702532876500FE5A86 /* LaunchingViewController.swift */; };
+		92A2F3D22542C45700F113E1 /* ChangePwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A2F3D12542C45700F113E1 /* ChangePwdViewController.swift */; };
 		92F4C666254024F7003DAE19 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4C665254024F7003DAE19 /* MenuViewController.swift */; };
 		92F8DE4D252DAE86004FD96F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8DE4C252DAE86004FD96F /* AppDelegate.swift */; };
 		92F8DE4F252DAE86004FD96F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8DE4E252DAE86004FD96F /* SceneDelegate.swift */; };
@@ -36,6 +37,7 @@
 		921136EF25308721006E8141 /* PhoneNumberInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberInputViewController.swift; sourceTree = "<group>"; };
 		921136F2253092F4006E8141 /* EndofSingupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndofSingupViewController.swift; sourceTree = "<group>"; };
 		923915702532876500FE5A86 /* LaunchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchingViewController.swift; sourceTree = "<group>"; };
+		92A2F3D12542C45700F113E1 /* ChangePwdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwdViewController.swift; sourceTree = "<group>"; };
 		92F4C665254024F7003DAE19 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		92F8DE49252DAE86004FD96F /* DDYZD_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDYZD_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F8DE4C252DAE86004FD96F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				92F8DE6A252DB1BD004FD96F /* MainViewController.swift */,
 				92F8DE8725301FF6004FD96F /* CircleInfoViewController.swift */,
 				92F4C665254024F7003DAE19 /* MenuViewController.swift */,
+				92A2F3D12542C45700F113E1 /* ChangePwdViewController.swift */,
 				92F8DE6D252E01D0004FD96F /* RoundUIView.swift */,
 			);
 			path = Views;
@@ -281,6 +284,7 @@
 			files = (
 				921136F3253092F4006E8141 /* EndofSingupViewController.swift in Sources */,
 				92F8DE6B252DB1BD004FD96F /* MainViewController.swift in Sources */,
+				92A2F3D22542C45700F113E1 /* ChangePwdViewController.swift in Sources */,
 				921136EC2530822A006E8141 /* PwdInputViewController.swift in Sources */,
 				92F8DE6E252E01D0004FD96F /* RoundUIView.swift in Sources */,
 				921136F025308721006E8141 /* PhoneNumberInputViewController.swift in Sources */,
