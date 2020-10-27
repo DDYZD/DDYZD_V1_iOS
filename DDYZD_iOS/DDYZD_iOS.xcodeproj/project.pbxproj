@@ -25,7 +25,6 @@
 		92F8DE71252E9968004FD96F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8DE70252E9968004FD96F /* LoginViewController.swift */; };
 		92F8DE7A252FD953004FD96F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F8DE79252FD953004FD96F /* Assets.xcassets */; };
 		92F8DE8825301FF6004FD96F /* CircleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F8DE8725301FF6004FD96F /* CircleInfoViewController.swift */; };
-		92F8DE8C2530326B004FD96F /* sample.md in Resources */ = {isa = PBXBuildFile; fileRef = 92F8DE8B2530326B004FD96F /* sample.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +49,6 @@
 		92F8DE70252E9968004FD96F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		92F8DE79252FD953004FD96F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92F8DE8725301FF6004FD96F /* CircleInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleInfoViewController.swift; sourceTree = "<group>"; };
-		92F8DE8B2530326B004FD96F /* sample.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = sample.md; sourceTree = "<group>"; };
 		96BBFFB0A152F893D29BF2F5 /* Pods-DDYZD_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDYZD_iOS.release.xcconfig"; path = "Target Support Files/Pods-DDYZD_iOS/Pods-DDYZD_iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,10 +106,9 @@
 		92F8DE4B252DAE86004FD96F /* DDYZD_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				92F8DE8B2530326B004FD96F /* sample.md */,
 				92F8DE62252DAED6004FD96F /* Resources */,
-				92F8DE61252DAEA3004FD96F /* Views */,
 				92F8DE63252DAEEC004FD96F /* Controllers */,
+				92F8DE61252DAEA3004FD96F /* Views */,
 				92F8DE5A252DAE8A004FD96F /* Info.plist */,
 			);
 			path = DDYZD_iOS;
@@ -120,14 +117,8 @@
 		92F8DE61252DAEA3004FD96F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				923915702532876500FE5A86 /* LaunchingViewController.swift */,
-				92F8DE70252E9968004FD96F /* LoginViewController.swift */,
-				921136DE253070A6006E8141 /* Signup */,
-				92F8DE6A252DB1BD004FD96F /* MainViewController.swift */,
-				92F8DE8725301FF6004FD96F /* CircleInfoViewController.swift */,
-				92F4C665254024F7003DAE19 /* MenuViewController.swift */,
-				92A2F3D12542C45700F113E1 /* ChangePwdViewController.swift */,
-				92F8DE6D252E01D0004FD96F /* RoundUIView.swift */,
+				92F8DE79252FD953004FD96F /* Assets.xcassets */,
+				92F8DE65252DAF16004FD96F /* Storyboards */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,8 +135,14 @@
 		92F8DE63252DAEEC004FD96F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				92F8DE79252FD953004FD96F /* Assets.xcassets */,
-				92F8DE65252DAF16004FD96F /* Storyboards */,
+				923915702532876500FE5A86 /* LaunchingViewController.swift */,
+				92F8DE70252E9968004FD96F /* LoginViewController.swift */,
+				921136DE253070A6006E8141 /* Signup */,
+				92F8DE6A252DB1BD004FD96F /* MainViewController.swift */,
+				92F8DE8725301FF6004FD96F /* CircleInfoViewController.swift */,
+				92F4C665254024F7003DAE19 /* MenuViewController.swift */,
+				92A2F3D12542C45700F113E1 /* ChangePwdViewController.swift */,
+				92F8DE6D252E01D0004FD96F /* RoundUIView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -228,7 +225,6 @@
 			files = (
 				92F8DE59252DAE8A004FD96F /* LaunchScreen.storyboard in Resources */,
 				92F8DE7A252FD953004FD96F /* Assets.xcassets in Resources */,
-				92F8DE8C2530326B004FD96F /* sample.md in Resources */,
 				92F8DE54252DAE86004FD96F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
